@@ -1,0 +1,52 @@
+experiment:
+  name: experiment_55_practical_boundary_late_lr_sweep
+output:
+  root: outputs
+data:
+  name: cifar100
+  root: data
+  num_classes: 100
+  image_size: 32
+  batch_size: 128
+  num_workers: 2
+  augment: true
+  normalize: true
+  return_clean_labels: true
+label_noise:
+  rate: 0.0
+  seed: 0
+model:
+  name: resnet18_cifar
+  in_channels: 3
+  num_classes: 100
+  width: 64
+  use_bn: true
+fls:
+  mode: location
+  boundaries:
+    after_early: {output_multiplier: 1.0, init_scale: 1.0}
+    after_middle: {output_multiplier: 1.0, init_scale: 1.0}
+    after_late: {output_multiplier: 0.0625, init_scale: 1.0}
+training:
+  seed: 0
+  device: auto
+  max_epochs: 80
+  max_steps: null
+  optimizer: sgd
+  lr: 0.04096
+  location_lr_compensation: upstream
+  weight_decay: 0.0005
+  momentum: 0.9
+  save_checkpoints: true
+diagnostics:
+  enabled: false
+  frequency_epochs: 10
+  regions: [early, middle, late, head]
+sweep:
+  seeds: [0]
+  learning_rates: [0.00256, 0.00512, 0.01024, 0.02048, 0.04096, 0.08192]
+  varied_boundaries: [after_late]
+  output_multipliers: [0.0625]
+  fixed_output_multiplier: 1.0
+  skip_completed: true
+  continue_on_error: true

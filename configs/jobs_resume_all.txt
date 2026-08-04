@@ -1,0 +1,74 @@
+# Causal dissociation wave: hold eff-LR ratio fixed (lr_comp=0.0625),
+# vary activation scale. If accuracy/NC move with activation at constant eff-LR,
+# the effect is genuine activation/feature-learning, not LR-ratio relabeling.
+# Reuses imp_dose_base.yaml (location mode, controlled protocol, checkpoints on).
+# fixed eff-LR ratio sweep over activation, seeds 0-2
+configs/imp_dose_base.yaml training.seed=0 training.max_epochs=80 training.location_lr_compensation_multipliers.after_late=0.0625 fls.boundaries.after_late.output_multiplier=1.0 experiment.name=imp_causal_fixlr_act1p0
+configs/imp_dose_base.yaml training.seed=0 training.max_epochs=80 training.location_lr_compensation_multipliers.after_late=0.0625 fls.boundaries.after_late.output_multiplier=0.25 experiment.name=imp_causal_fixlr_act0p25
+configs/imp_dose_base.yaml training.seed=0 training.max_epochs=80 training.location_lr_compensation_multipliers.after_late=0.0625 fls.boundaries.after_late.output_multiplier=0.0625 experiment.name=imp_causal_fixlr_act0p0625
+configs/imp_dose_base.yaml training.seed=0 training.max_epochs=80 training.location_lr_compensation_multipliers.after_late=0.0625 fls.boundaries.after_late.output_multiplier=0.015625 experiment.name=imp_causal_fixlr_act0p015625
+configs/imp_dose_base.yaml training.seed=0 training.max_epochs=80 training.location_lr_compensation_multipliers.after_late=1.0 fls.boundaries.after_late.output_multiplier=0.0625 experiment.name=imp_causal_actonly
+configs/imp_dose_base.yaml training.seed=1 training.max_epochs=80 training.location_lr_compensation_multipliers.after_late=0.0625 fls.boundaries.after_late.output_multiplier=1.0 experiment.name=imp_causal_fixlr_act1p0
+configs/imp_dose_base.yaml training.seed=1 training.max_epochs=80 training.location_lr_compensation_multipliers.after_late=0.0625 fls.boundaries.after_late.output_multiplier=0.25 experiment.name=imp_causal_fixlr_act0p25
+configs/imp_dose_base.yaml training.seed=1 training.max_epochs=80 training.location_lr_compensation_multipliers.after_late=0.0625 fls.boundaries.after_late.output_multiplier=0.0625 experiment.name=imp_causal_fixlr_act0p0625
+configs/imp_dose_base.yaml training.seed=1 training.max_epochs=80 training.location_lr_compensation_multipliers.after_late=0.0625 fls.boundaries.after_late.output_multiplier=0.015625 experiment.name=imp_causal_fixlr_act0p015625
+configs/imp_dose_base.yaml training.seed=1 training.max_epochs=80 training.location_lr_compensation_multipliers.after_late=1.0 fls.boundaries.after_late.output_multiplier=0.0625 experiment.name=imp_causal_actonly
+configs/imp_dose_base.yaml training.seed=2 training.max_epochs=80 training.location_lr_compensation_multipliers.after_late=0.0625 fls.boundaries.after_late.output_multiplier=1.0 experiment.name=imp_causal_fixlr_act1p0
+configs/imp_dose_base.yaml training.seed=2 training.max_epochs=80 training.location_lr_compensation_multipliers.after_late=0.0625 fls.boundaries.after_late.output_multiplier=0.25 experiment.name=imp_causal_fixlr_act0p25
+configs/imp_dose_base.yaml training.seed=2 training.max_epochs=80 training.location_lr_compensation_multipliers.after_late=0.0625 fls.boundaries.after_late.output_multiplier=0.0625 experiment.name=imp_causal_fixlr_act0p0625
+configs/imp_dose_base.yaml training.seed=2 training.max_epochs=80 training.location_lr_compensation_multipliers.after_late=0.0625 fls.boundaries.after_late.output_multiplier=0.015625 experiment.name=imp_causal_fixlr_act0p015625
+configs/imp_dose_base.yaml training.seed=2 training.max_epochs=80 training.location_lr_compensation_multipliers.after_late=1.0 fls.boundaries.after_late.output_multiplier=0.0625 experiment.name=imp_causal_actonly
+# Wave 3 -- generality: VGG19-BN matched pair at n=5 (upgrade paper's n=3).
+# Controlled protocol, base LR 0.04096, checkpoints saved.
+configs/imp_vgg_global.yaml training.seed=0 training.max_epochs=80 experiment.name=imp_vgg_global
+configs/imp_vgg_global.yaml training.seed=1 training.max_epochs=80 experiment.name=imp_vgg_global
+configs/imp_vgg_global.yaml training.seed=2 training.max_epochs=80 experiment.name=imp_vgg_global
+configs/imp_vgg_global.yaml training.seed=3 training.max_epochs=80 experiment.name=imp_vgg_global
+configs/imp_vgg_global.yaml training.seed=4 training.max_epochs=80 experiment.name=imp_vgg_global
+configs/imp_vgg_late.yaml training.seed=0 training.max_epochs=80 experiment.name=imp_vgg_late
+configs/imp_vgg_late.yaml training.seed=1 training.max_epochs=80 experiment.name=imp_vgg_late
+configs/imp_vgg_late.yaml training.seed=2 training.max_epochs=80 experiment.name=imp_vgg_late
+configs/imp_vgg_late.yaml training.seed=3 training.max_epochs=80 experiment.name=imp_vgg_late
+configs/imp_vgg_late.yaml training.seed=4 training.max_epochs=80 experiment.name=imp_vgg_late
+# Wave-env -- confirm middle/early ENVELOPE cells at n=5 (own-best base LR).
+# Tests: even at their own best LR, middle/early cannot beat the global scalar (~59.5).
+# middle envelope cell: base_lr 0.08192, after_middle c=0.25
+configs/imp_dose_base.yaml training.seed=0 training.max_epochs=80 training.lr=0.08192 fls.boundaries.after_middle.output_multiplier=0.25 experiment.name=imp_env_middle
+configs/imp_dose_base.yaml training.seed=1 training.max_epochs=80 training.lr=0.08192 fls.boundaries.after_middle.output_multiplier=0.25 experiment.name=imp_env_middle
+configs/imp_dose_base.yaml training.seed=2 training.max_epochs=80 training.lr=0.08192 fls.boundaries.after_middle.output_multiplier=0.25 experiment.name=imp_env_middle
+configs/imp_dose_base.yaml training.seed=3 training.max_epochs=80 training.lr=0.08192 fls.boundaries.after_middle.output_multiplier=0.25 experiment.name=imp_env_middle
+configs/imp_dose_base.yaml training.seed=4 training.max_epochs=80 training.lr=0.08192 fls.boundaries.after_middle.output_multiplier=0.25 experiment.name=imp_env_middle
+# early envelope cell: base_lr 0.16384, after_early c=2.0
+configs/imp_dose_base.yaml training.seed=0 training.max_epochs=80 training.lr=0.16384 fls.boundaries.after_early.output_multiplier=2.0 experiment.name=imp_env_early
+configs/imp_dose_base.yaml training.seed=1 training.max_epochs=80 training.lr=0.16384 fls.boundaries.after_early.output_multiplier=2.0 experiment.name=imp_env_early
+configs/imp_dose_base.yaml training.seed=2 training.max_epochs=80 training.lr=0.16384 fls.boundaries.after_early.output_multiplier=2.0 experiment.name=imp_env_early
+configs/imp_dose_base.yaml training.seed=3 training.max_epochs=80 training.lr=0.16384 fls.boundaries.after_early.output_multiplier=2.0 experiment.name=imp_env_early
+configs/imp_dose_base.yaml training.seed=4 training.max_epochs=80 training.lr=0.16384 fls.boundaries.after_early.output_multiplier=2.0 experiment.name=imp_env_early
+# Wave-pos -- depth-POSITION profile: fix scaling strength c=0.0625, slide the cut
+# position from shallow (2) to deep (8), base LR 0.04096, seeds 0-2.
+# cut->coarse map: 2=after_early, 4=after_middle, 8=after_late. 3,5,6,7 are finer.
+# baseline (no scaling, c=1.0) for the profile's zero line
+configs/imp_pos_base.yaml training.seed=0 training.max_epochs=80 fls.position=8 fls.output_multiplier=1.0 experiment.name=imp_pos_baseline
+configs/imp_pos_base.yaml training.seed=1 training.max_epochs=80 fls.position=8 fls.output_multiplier=1.0 experiment.name=imp_pos_baseline
+configs/imp_pos_base.yaml training.seed=2 training.max_epochs=80 fls.position=8 fls.output_multiplier=1.0 experiment.name=imp_pos_baseline
+configs/imp_pos_base.yaml training.seed=0 training.max_epochs=80 fls.position=2 fls.output_multiplier=0.0625 experiment.name=imp_pos_cut2
+configs/imp_pos_base.yaml training.seed=1 training.max_epochs=80 fls.position=2 fls.output_multiplier=0.0625 experiment.name=imp_pos_cut2
+configs/imp_pos_base.yaml training.seed=2 training.max_epochs=80 fls.position=2 fls.output_multiplier=0.0625 experiment.name=imp_pos_cut2
+configs/imp_pos_base.yaml training.seed=0 training.max_epochs=80 fls.position=3 fls.output_multiplier=0.0625 experiment.name=imp_pos_cut3
+configs/imp_pos_base.yaml training.seed=1 training.max_epochs=80 fls.position=3 fls.output_multiplier=0.0625 experiment.name=imp_pos_cut3
+configs/imp_pos_base.yaml training.seed=2 training.max_epochs=80 fls.position=3 fls.output_multiplier=0.0625 experiment.name=imp_pos_cut3
+configs/imp_pos_base.yaml training.seed=0 training.max_epochs=80 fls.position=4 fls.output_multiplier=0.0625 experiment.name=imp_pos_cut4
+configs/imp_pos_base.yaml training.seed=1 training.max_epochs=80 fls.position=4 fls.output_multiplier=0.0625 experiment.name=imp_pos_cut4
+configs/imp_pos_base.yaml training.seed=2 training.max_epochs=80 fls.position=4 fls.output_multiplier=0.0625 experiment.name=imp_pos_cut4
+configs/imp_pos_base.yaml training.seed=0 training.max_epochs=80 fls.position=5 fls.output_multiplier=0.0625 experiment.name=imp_pos_cut5
+configs/imp_pos_base.yaml training.seed=1 training.max_epochs=80 fls.position=5 fls.output_multiplier=0.0625 experiment.name=imp_pos_cut5
+configs/imp_pos_base.yaml training.seed=2 training.max_epochs=80 fls.position=5 fls.output_multiplier=0.0625 experiment.name=imp_pos_cut5
+configs/imp_pos_base.yaml training.seed=0 training.max_epochs=80 fls.position=6 fls.output_multiplier=0.0625 experiment.name=imp_pos_cut6
+configs/imp_pos_base.yaml training.seed=1 training.max_epochs=80 fls.position=6 fls.output_multiplier=0.0625 experiment.name=imp_pos_cut6
+configs/imp_pos_base.yaml training.seed=2 training.max_epochs=80 fls.position=6 fls.output_multiplier=0.0625 experiment.name=imp_pos_cut6
+configs/imp_pos_base.yaml training.seed=0 training.max_epochs=80 fls.position=7 fls.output_multiplier=0.0625 experiment.name=imp_pos_cut7
+configs/imp_pos_base.yaml training.seed=1 training.max_epochs=80 fls.position=7 fls.output_multiplier=0.0625 experiment.name=imp_pos_cut7
+configs/imp_pos_base.yaml training.seed=2 training.max_epochs=80 fls.position=7 fls.output_multiplier=0.0625 experiment.name=imp_pos_cut7
+configs/imp_pos_base.yaml training.seed=0 training.max_epochs=80 fls.position=8 fls.output_multiplier=0.0625 experiment.name=imp_pos_cut8
+configs/imp_pos_base.yaml training.seed=1 training.max_epochs=80 fls.position=8 fls.output_multiplier=0.0625 experiment.name=imp_pos_cut8
+configs/imp_pos_base.yaml training.seed=2 training.max_epochs=80 fls.position=8 fls.output_multiplier=0.0625 experiment.name=imp_pos_cut8

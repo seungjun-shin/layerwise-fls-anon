@@ -1,0 +1,31 @@
+# Wave-fact: complete the 3x3 upstream-LR(m) x activation(a) factorial at after_late.
+# Resolves causal-dissociation W2: design-independent main effects + interaction.
+configs/imp_dose_base.yaml training.seed=0 training.max_epochs=80 training.location_lr_compensation_multipliers.after_late=1.0 fls.boundaries.after_late.output_multiplier=0.25 experiment.name=imp_fact_m1p0_a0p25
+configs/imp_dose_base.yaml training.seed=0 training.max_epochs=80 training.location_lr_compensation_multipliers.after_late=0.25 fls.boundaries.after_late.output_multiplier=1.0 experiment.name=imp_fact_m0p25_a1p0
+configs/imp_dose_base.yaml training.seed=0 training.max_epochs=80 training.location_lr_compensation_multipliers.after_late=0.25 fls.boundaries.after_late.output_multiplier=0.25 experiment.name=imp_fact_m0p25_a0p25
+configs/imp_dose_base.yaml training.seed=0 training.max_epochs=80 training.location_lr_compensation_multipliers.after_late=0.25 fls.boundaries.after_late.output_multiplier=0.0625 experiment.name=imp_fact_m0p25_a0p0625
+configs/imp_dose_base.yaml training.seed=1 training.max_epochs=80 training.location_lr_compensation_multipliers.after_late=1.0 fls.boundaries.after_late.output_multiplier=0.25 experiment.name=imp_fact_m1p0_a0p25
+configs/imp_dose_base.yaml training.seed=1 training.max_epochs=80 training.location_lr_compensation_multipliers.after_late=0.25 fls.boundaries.after_late.output_multiplier=1.0 experiment.name=imp_fact_m0p25_a1p0
+configs/imp_dose_base.yaml training.seed=1 training.max_epochs=80 training.location_lr_compensation_multipliers.after_late=0.25 fls.boundaries.after_late.output_multiplier=0.25 experiment.name=imp_fact_m0p25_a0p25
+configs/imp_dose_base.yaml training.seed=1 training.max_epochs=80 training.location_lr_compensation_multipliers.after_late=0.25 fls.boundaries.after_late.output_multiplier=0.0625 experiment.name=imp_fact_m0p25_a0p0625
+configs/imp_dose_base.yaml training.seed=2 training.max_epochs=80 training.location_lr_compensation_multipliers.after_late=1.0 fls.boundaries.after_late.output_multiplier=0.25 experiment.name=imp_fact_m1p0_a0p25
+configs/imp_dose_base.yaml training.seed=2 training.max_epochs=80 training.location_lr_compensation_multipliers.after_late=0.25 fls.boundaries.after_late.output_multiplier=1.0 experiment.name=imp_fact_m0p25_a1p0
+configs/imp_dose_base.yaml training.seed=2 training.max_epochs=80 training.location_lr_compensation_multipliers.after_late=0.25 fls.boundaries.after_late.output_multiplier=0.25 experiment.name=imp_fact_m0p25_a0p25
+configs/imp_dose_base.yaml training.seed=2 training.max_epochs=80 training.location_lr_compensation_multipliers.after_late=0.25 fls.boundaries.after_late.output_multiplier=0.0625 experiment.name=imp_fact_m0p25_a0p0625
+# Wave-posN5: extend depth profile to n=5 (add seeds 3,4) for strict-trend + isotonic test (W1).
+configs/imp_pos_base.yaml training.seed=3 training.max_epochs=80 fls.position=8 fls.output_multiplier=1.0 experiment.name=imp_pos_baseline
+configs/imp_pos_base.yaml training.seed=3 training.max_epochs=80 fls.position=2 fls.output_multiplier=0.0625 experiment.name=imp_pos_cut2
+configs/imp_pos_base.yaml training.seed=3 training.max_epochs=80 fls.position=3 fls.output_multiplier=0.0625 experiment.name=imp_pos_cut3
+configs/imp_pos_base.yaml training.seed=3 training.max_epochs=80 fls.position=4 fls.output_multiplier=0.0625 experiment.name=imp_pos_cut4
+configs/imp_pos_base.yaml training.seed=3 training.max_epochs=80 fls.position=5 fls.output_multiplier=0.0625 experiment.name=imp_pos_cut5
+configs/imp_pos_base.yaml training.seed=3 training.max_epochs=80 fls.position=6 fls.output_multiplier=0.0625 experiment.name=imp_pos_cut6
+configs/imp_pos_base.yaml training.seed=3 training.max_epochs=80 fls.position=7 fls.output_multiplier=0.0625 experiment.name=imp_pos_cut7
+configs/imp_pos_base.yaml training.seed=3 training.max_epochs=80 fls.position=8 fls.output_multiplier=0.0625 experiment.name=imp_pos_cut8
+configs/imp_pos_base.yaml training.seed=4 training.max_epochs=80 fls.position=8 fls.output_multiplier=1.0 experiment.name=imp_pos_baseline
+configs/imp_pos_base.yaml training.seed=4 training.max_epochs=80 fls.position=2 fls.output_multiplier=0.0625 experiment.name=imp_pos_cut2
+configs/imp_pos_base.yaml training.seed=4 training.max_epochs=80 fls.position=3 fls.output_multiplier=0.0625 experiment.name=imp_pos_cut3
+configs/imp_pos_base.yaml training.seed=4 training.max_epochs=80 fls.position=4 fls.output_multiplier=0.0625 experiment.name=imp_pos_cut4
+configs/imp_pos_base.yaml training.seed=4 training.max_epochs=80 fls.position=5 fls.output_multiplier=0.0625 experiment.name=imp_pos_cut5
+configs/imp_pos_base.yaml training.seed=4 training.max_epochs=80 fls.position=6 fls.output_multiplier=0.0625 experiment.name=imp_pos_cut6
+configs/imp_pos_base.yaml training.seed=4 training.max_epochs=80 fls.position=7 fls.output_multiplier=0.0625 experiment.name=imp_pos_cut7
+configs/imp_pos_base.yaml training.seed=4 training.max_epochs=80 fls.position=8 fls.output_multiplier=0.0625 experiment.name=imp_pos_cut8

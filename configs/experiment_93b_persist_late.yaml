@@ -1,0 +1,49 @@
+# n=5 persistence extension — AFTER-LATE boundary. Faithful reproduction of
+# experiment_93_persist_late_c0p0625 (augment + cosine on top of the controlled
+# setting; momentum 0, weight decay 0, lr 0.04096, after_late c=0.0625, upstream
+# location LR compensation). Seeds 3-4 only, extending the existing n=3 to n=5.
+experiment:
+  name: experiment_93_persist_late_c0p0625
+output:
+  root: outputs
+data:
+  name: cifar100
+  root: data
+  num_classes: 100
+  image_size: 32
+  batch_size: 128
+  num_workers: 2
+  augment: true
+  normalize: true
+  return_clean_labels: true
+label_noise:
+  rate: 0.0
+  seed: 0
+model:
+  name: resnet18_cifar
+  in_channels: 3
+  num_classes: 100
+  width: 64
+  use_bn: true
+fls:
+  mode: location
+  boundaries:
+    after_early: {output_multiplier: 1.0, init_scale: 1.0}
+    after_middle: {output_multiplier: 1.0, init_scale: 1.0}
+    after_late: {output_multiplier: 0.0625, init_scale: 1.0}
+training:
+  seed: 0            # overridden per job (3, 4)
+  device: auto
+  max_epochs: 80
+  max_steps: null
+  optimizer: sgd
+  lr: 0.04096
+  location_lr_compensation: upstream
+  weight_decay: 0.0
+  momentum: 0.0
+  lr_scheduler: cosine
+  save_checkpoints: true
+diagnostics:
+  enabled: false
+  frequency_epochs: 10
+  regions: [early, middle, late, head]

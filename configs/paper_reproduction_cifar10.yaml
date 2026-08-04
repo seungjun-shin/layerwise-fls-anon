@@ -1,0 +1,49 @@
+experiment:
+  name: paper_reproduction_cifar10
+output:
+  root: outputs
+data:
+  name: cifar10
+  root: data
+  num_classes: 10
+  image_size: 32
+  batch_size: 128
+  num_workers: 2
+  augment: false
+  normalize: true
+  return_clean_labels: true
+label_noise:
+  rate: 0.0
+  seed: 0
+model:
+  name: resnet18_cifar
+  in_channels: 3
+  num_classes: 10
+  width: 64
+  use_bn: true
+fls:
+  mode: global
+  global:
+    output_multiplier: 1.0
+    lr_compensation: true
+training:
+  seed: 0
+  device: auto
+  max_epochs: 80
+  max_steps: null
+  optimizer: sgd
+  lr: 0.00064
+  weight_decay: 0.0
+  momentum: 0.0
+  target_train_accuracy: null
+  target_train_loss: null
+diagnostics:
+  enabled: true
+  frequency_epochs: 10
+  groups: [early, middle, late, head]
+sweep:
+  seeds: [0, 1, 2]
+  global_output_multipliers: [0.0625, 0.125, 0.25, 0.5, 1.0, 2.0, 4.0]
+  learning_rates: [0.00016, 0.00032, 0.00064, 0.00128, 0.00256]
+  record_threshold_train_accuracy: 0.99
+

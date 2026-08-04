@@ -1,0 +1,14 @@
+# Wave-env -- confirm middle/early ENVELOPE cells at n=5 (own-best base LR).
+# Tests: even at their own best LR, middle/early cannot beat the global scalar (~59.5).
+# middle envelope cell: base_lr 0.08192, after_middle c=0.25
+configs/imp_dose_base.yaml training.seed=0 training.max_epochs=80 training.lr=0.08192 fls.boundaries.after_middle.output_multiplier=0.25 experiment.name=imp_env_middle
+configs/imp_dose_base.yaml training.seed=1 training.max_epochs=80 training.lr=0.08192 fls.boundaries.after_middle.output_multiplier=0.25 experiment.name=imp_env_middle
+configs/imp_dose_base.yaml training.seed=2 training.max_epochs=80 training.lr=0.08192 fls.boundaries.after_middle.output_multiplier=0.25 experiment.name=imp_env_middle
+configs/imp_dose_base.yaml training.seed=3 training.max_epochs=80 training.lr=0.08192 fls.boundaries.after_middle.output_multiplier=0.25 experiment.name=imp_env_middle
+configs/imp_dose_base.yaml training.seed=4 training.max_epochs=80 training.lr=0.08192 fls.boundaries.after_middle.output_multiplier=0.25 experiment.name=imp_env_middle
+# early envelope cell: base_lr 0.16384, after_early c=2.0
+configs/imp_dose_base.yaml training.seed=0 training.max_epochs=80 training.lr=0.16384 fls.boundaries.after_early.output_multiplier=2.0 experiment.name=imp_env_early
+configs/imp_dose_base.yaml training.seed=1 training.max_epochs=80 training.lr=0.16384 fls.boundaries.after_early.output_multiplier=2.0 experiment.name=imp_env_early
+configs/imp_dose_base.yaml training.seed=2 training.max_epochs=80 training.lr=0.16384 fls.boundaries.after_early.output_multiplier=2.0 experiment.name=imp_env_early
+configs/imp_dose_base.yaml training.seed=3 training.max_epochs=80 training.lr=0.16384 fls.boundaries.after_early.output_multiplier=2.0 experiment.name=imp_env_early
+configs/imp_dose_base.yaml training.seed=4 training.max_epochs=80 training.lr=0.16384 fls.boundaries.after_early.output_multiplier=2.0 experiment.name=imp_env_early

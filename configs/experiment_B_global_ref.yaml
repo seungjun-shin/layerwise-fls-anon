@@ -1,0 +1,51 @@
+# Experiment B — matched GLOBAL FLS reference for the budget/schedule ladder.
+# Controlled regime (no aug / no momentum / no WD), c=0.25, base LR 0.04096 —
+# identical to the matched clean comparison, EXCEPT that training.max_epochs and
+# training.lr_scheduler are overridden per job to isolate the under-training /
+# schedule-length confound. Pair this with imp_pos_base.yaml (position=8,
+# output_multiplier=0.0625) as the after-late arm.
+experiment:
+  name: experiment_B_global_ref
+output:
+  root: outputs
+data:
+  name: cifar100
+  root: data
+  num_classes: 100
+  image_size: 32
+  batch_size: 128
+  num_workers: 2
+  augment: false
+  normalize: true
+  return_clean_labels: true
+  val_fraction: 0.1
+  val_seed: 0
+label_noise:
+  rate: 0.0
+  seed: 0
+model:
+  name: resnet18_cifar
+  in_channels: 3
+  num_classes: 100
+  width: 64
+  use_bn: true
+fls:
+  mode: global
+  global:
+    output_multiplier: 0.25
+    lr_compensation: true
+training:
+  seed: 0
+  device: auto
+  max_epochs: 80          # overridden per job: 80 / 160 / 320
+  max_steps: null
+  optimizer: sgd
+  lr: 0.04096
+  lr_scheduler: none      # overridden per job: none / cosine
+  weight_decay: 0.0
+  momentum: 0.0
+  save_checkpoints: true
+diagnostics:
+  enabled: false          # overridden to true at matched-pair budget endpoints
+  frequency_epochs: 10
+  regions: [early, middle, late, head]

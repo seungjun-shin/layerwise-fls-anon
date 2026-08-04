@@ -1,0 +1,25 @@
+# Validation-controlled VGG19-BN stabilization sweep.
+# The 10% validation split (val_seed=0) selects the checkpoint within each run.
+# Seeds 0-2 are repeated for the global reference, boundary intervention, and
+# same-cut LR-only controls at 2x, 4x, 8x, and 16x upstream learning rates.
+
+configs/imp_vgg_global.yaml training.seed=0 training.max_epochs=80 data.val_fraction=0.1 data.val_seed=0 training.save_checkpoints=true training.checkpoint_at_accs=[] experiment.name=val_vgg_global_c0p25_iso
+configs/val_vgg_bnd_cut15_iso.yaml training.seed=0 training.max_epochs=80 training.save_checkpoints=true training.checkpoint_at_accs=[] experiment.name=val_vgg_bnd_cut15_iso
+configs/val_vgg_lr_cut15_2x_iso.yaml training.seed=0 training.max_epochs=80 training.save_checkpoints=true training.checkpoint_at_accs=[] experiment.name=val_vgg_lr_cut15_2x_iso
+configs/imp_vgg_pos_base.yaml training.seed=0 training.max_epochs=80 fls.position=15 fls.output_multiplier=1.0 fls.lr_compensation_multiplier=0.25 data.val_fraction=0.1 data.val_seed=0 training.save_checkpoints=true training.checkpoint_at_accs=[] experiment.name=val_vgg_lr_cut15_4x_iso
+configs/imp_vgg_pos_base.yaml training.seed=0 training.max_epochs=80 fls.position=15 fls.output_multiplier=1.0 fls.lr_compensation_multiplier=0.125 data.val_fraction=0.1 data.val_seed=0 training.save_checkpoints=true training.checkpoint_at_accs=[] experiment.name=val_vgg_lr_cut15_8x_iso
+configs/imp_vgg_pos_base.yaml training.seed=0 training.max_epochs=80 fls.position=15 fls.output_multiplier=1.0 fls.lr_compensation_multiplier=0.0625 data.val_fraction=0.1 data.val_seed=0 training.save_checkpoints=true training.checkpoint_at_accs=[] experiment.name=val_vgg_lr_cut15_16x_iso
+
+configs/imp_vgg_global.yaml training.seed=1 training.max_epochs=80 data.val_fraction=0.1 data.val_seed=0 training.save_checkpoints=true training.checkpoint_at_accs=[] experiment.name=val_vgg_global_c0p25_iso
+configs/val_vgg_bnd_cut15_iso.yaml training.seed=1 training.max_epochs=80 training.save_checkpoints=true training.checkpoint_at_accs=[] experiment.name=val_vgg_bnd_cut15_iso
+configs/val_vgg_lr_cut15_2x_iso.yaml training.seed=1 training.max_epochs=80 training.save_checkpoints=true training.checkpoint_at_accs=[] experiment.name=val_vgg_lr_cut15_2x_iso
+configs/imp_vgg_pos_base.yaml training.seed=1 training.max_epochs=80 fls.position=15 fls.output_multiplier=1.0 fls.lr_compensation_multiplier=0.25 data.val_fraction=0.1 data.val_seed=0 training.save_checkpoints=true training.checkpoint_at_accs=[] experiment.name=val_vgg_lr_cut15_4x_iso
+configs/imp_vgg_pos_base.yaml training.seed=1 training.max_epochs=80 fls.position=15 fls.output_multiplier=1.0 fls.lr_compensation_multiplier=0.125 data.val_fraction=0.1 data.val_seed=0 training.save_checkpoints=true training.checkpoint_at_accs=[] experiment.name=val_vgg_lr_cut15_8x_iso
+configs/imp_vgg_pos_base.yaml training.seed=1 training.max_epochs=80 fls.position=15 fls.output_multiplier=1.0 fls.lr_compensation_multiplier=0.0625 data.val_fraction=0.1 data.val_seed=0 training.save_checkpoints=true training.checkpoint_at_accs=[] experiment.name=val_vgg_lr_cut15_16x_iso
+
+configs/imp_vgg_global.yaml training.seed=2 training.max_epochs=80 data.val_fraction=0.1 data.val_seed=0 training.save_checkpoints=true training.checkpoint_at_accs=[] experiment.name=val_vgg_global_c0p25_iso
+configs/val_vgg_bnd_cut15_iso.yaml training.seed=2 training.max_epochs=80 training.save_checkpoints=true training.checkpoint_at_accs=[] experiment.name=val_vgg_bnd_cut15_iso
+configs/val_vgg_lr_cut15_2x_iso.yaml training.seed=2 training.max_epochs=80 training.save_checkpoints=true training.checkpoint_at_accs=[] experiment.name=val_vgg_lr_cut15_2x_iso
+configs/imp_vgg_pos_base.yaml training.seed=2 training.max_epochs=80 fls.position=15 fls.output_multiplier=1.0 fls.lr_compensation_multiplier=0.25 data.val_fraction=0.1 data.val_seed=0 training.save_checkpoints=true training.checkpoint_at_accs=[] experiment.name=val_vgg_lr_cut15_4x_iso
+configs/imp_vgg_pos_base.yaml training.seed=2 training.max_epochs=80 fls.position=15 fls.output_multiplier=1.0 fls.lr_compensation_multiplier=0.125 data.val_fraction=0.1 data.val_seed=0 training.save_checkpoints=true training.checkpoint_at_accs=[] experiment.name=val_vgg_lr_cut15_8x_iso
+configs/imp_vgg_pos_base.yaml training.seed=2 training.max_epochs=80 fls.position=15 fls.output_multiplier=1.0 fls.lr_compensation_multiplier=0.0625 data.val_fraction=0.1 data.val_seed=0 training.save_checkpoints=true training.checkpoint_at_accs=[] experiment.name=val_vgg_lr_cut15_16x_iso

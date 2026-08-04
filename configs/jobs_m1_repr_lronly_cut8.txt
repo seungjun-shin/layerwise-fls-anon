@@ -1,0 +1,8 @@
+# Representation-signature control: LR-only at LATE cut (block 8), WITH checkpoints, n=5.
+# Identical 16x upstream LR pattern as boundary cut8; activation=identity. iso-accuracy repr comparison.
+# Gives cut8 LR-only accuracy (n=5) AND checkpoints for 9-block drift/rank/align vs boundary cut8.
+configs/imp_pos_base.yaml training.seed=0 training.max_epochs=80 fls.position=8 fls.output_multiplier=1.0 fls.lr_compensation_multiplier=0.0625 training.save_checkpoints=true experiment.name=imp_pos_lronly_cut8_ckpt
+configs/imp_pos_base.yaml training.seed=1 training.max_epochs=80 fls.position=8 fls.output_multiplier=1.0 fls.lr_compensation_multiplier=0.0625 training.save_checkpoints=true experiment.name=imp_pos_lronly_cut8_ckpt
+configs/imp_pos_base.yaml training.seed=2 training.max_epochs=80 fls.position=8 fls.output_multiplier=1.0 fls.lr_compensation_multiplier=0.0625 training.save_checkpoints=true experiment.name=imp_pos_lronly_cut8_ckpt
+configs/imp_pos_base.yaml training.seed=3 training.max_epochs=80 fls.position=8 fls.output_multiplier=1.0 fls.lr_compensation_multiplier=0.0625 training.save_checkpoints=true experiment.name=imp_pos_lronly_cut8_ckpt
+configs/imp_pos_base.yaml training.seed=4 training.max_epochs=80 fls.position=8 fls.output_multiplier=1.0 fls.lr_compensation_multiplier=0.0625 training.save_checkpoints=true experiment.name=imp_pos_lronly_cut8_ckpt

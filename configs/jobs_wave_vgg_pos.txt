@@ -1,0 +1,30 @@
+# Wave-vgg-pos: VGG19-BN CIFAR-100 depth profile. c=0.0625 fixed, slide cut
+# over 16-block axis (after_early=3, after_middle=7, after_late=15). seeds 0-2.
+# baseline (c=1.0) gives the profile zero line.
+configs/imp_vgg_pos_base.yaml training.seed=0 training.max_epochs=80 fls.position=15 fls.output_multiplier=1.0 training.save_checkpoints=false experiment.name=imp_vgg_pos_baseline
+configs/imp_vgg_pos_base.yaml training.seed=1 training.max_epochs=80 fls.position=15 fls.output_multiplier=1.0 training.save_checkpoints=false experiment.name=imp_vgg_pos_baseline
+configs/imp_vgg_pos_base.yaml training.seed=2 training.max_epochs=80 fls.position=15 fls.output_multiplier=1.0 training.save_checkpoints=false experiment.name=imp_vgg_pos_baseline
+configs/imp_vgg_pos_base.yaml training.seed=0 training.max_epochs=80 fls.position=1 fls.output_multiplier=0.0625 training.save_checkpoints=false experiment.name=imp_vgg_pos_cut1
+configs/imp_vgg_pos_base.yaml training.seed=1 training.max_epochs=80 fls.position=1 fls.output_multiplier=0.0625 training.save_checkpoints=false experiment.name=imp_vgg_pos_cut1
+configs/imp_vgg_pos_base.yaml training.seed=2 training.max_epochs=80 fls.position=1 fls.output_multiplier=0.0625 training.save_checkpoints=false experiment.name=imp_vgg_pos_cut1
+configs/imp_vgg_pos_base.yaml training.seed=0 training.max_epochs=80 fls.position=3 fls.output_multiplier=0.0625 training.save_checkpoints=false experiment.name=imp_vgg_pos_cut3
+configs/imp_vgg_pos_base.yaml training.seed=1 training.max_epochs=80 fls.position=3 fls.output_multiplier=0.0625 training.save_checkpoints=false experiment.name=imp_vgg_pos_cut3
+configs/imp_vgg_pos_base.yaml training.seed=2 training.max_epochs=80 fls.position=3 fls.output_multiplier=0.0625 training.save_checkpoints=false experiment.name=imp_vgg_pos_cut3
+configs/imp_vgg_pos_base.yaml training.seed=0 training.max_epochs=80 fls.position=5 fls.output_multiplier=0.0625 training.save_checkpoints=false experiment.name=imp_vgg_pos_cut5
+configs/imp_vgg_pos_base.yaml training.seed=1 training.max_epochs=80 fls.position=5 fls.output_multiplier=0.0625 training.save_checkpoints=false experiment.name=imp_vgg_pos_cut5
+configs/imp_vgg_pos_base.yaml training.seed=2 training.max_epochs=80 fls.position=5 fls.output_multiplier=0.0625 training.save_checkpoints=false experiment.name=imp_vgg_pos_cut5
+configs/imp_vgg_pos_base.yaml training.seed=0 training.max_epochs=80 fls.position=7 fls.output_multiplier=0.0625 training.save_checkpoints=false experiment.name=imp_vgg_pos_cut7
+configs/imp_vgg_pos_base.yaml training.seed=1 training.max_epochs=80 fls.position=7 fls.output_multiplier=0.0625 training.save_checkpoints=false experiment.name=imp_vgg_pos_cut7
+configs/imp_vgg_pos_base.yaml training.seed=2 training.max_epochs=80 fls.position=7 fls.output_multiplier=0.0625 training.save_checkpoints=false experiment.name=imp_vgg_pos_cut7
+configs/imp_vgg_pos_base.yaml training.seed=0 training.max_epochs=80 fls.position=9 fls.output_multiplier=0.0625 training.save_checkpoints=false experiment.name=imp_vgg_pos_cut9
+configs/imp_vgg_pos_base.yaml training.seed=1 training.max_epochs=80 fls.position=9 fls.output_multiplier=0.0625 training.save_checkpoints=false experiment.name=imp_vgg_pos_cut9
+configs/imp_vgg_pos_base.yaml training.seed=2 training.max_epochs=80 fls.position=9 fls.output_multiplier=0.0625 training.save_checkpoints=false experiment.name=imp_vgg_pos_cut9
+configs/imp_vgg_pos_base.yaml training.seed=0 training.max_epochs=80 fls.position=11 fls.output_multiplier=0.0625 training.save_checkpoints=false experiment.name=imp_vgg_pos_cut11
+configs/imp_vgg_pos_base.yaml training.seed=1 training.max_epochs=80 fls.position=11 fls.output_multiplier=0.0625 training.save_checkpoints=false experiment.name=imp_vgg_pos_cut11
+configs/imp_vgg_pos_base.yaml training.seed=2 training.max_epochs=80 fls.position=11 fls.output_multiplier=0.0625 training.save_checkpoints=false experiment.name=imp_vgg_pos_cut11
+configs/imp_vgg_pos_base.yaml training.seed=0 training.max_epochs=80 fls.position=13 fls.output_multiplier=0.0625 training.save_checkpoints=false experiment.name=imp_vgg_pos_cut13
+configs/imp_vgg_pos_base.yaml training.seed=1 training.max_epochs=80 fls.position=13 fls.output_multiplier=0.0625 training.save_checkpoints=false experiment.name=imp_vgg_pos_cut13
+configs/imp_vgg_pos_base.yaml training.seed=2 training.max_epochs=80 fls.position=13 fls.output_multiplier=0.0625 training.save_checkpoints=false experiment.name=imp_vgg_pos_cut13
+configs/imp_vgg_pos_base.yaml training.seed=0 training.max_epochs=80 fls.position=15 fls.output_multiplier=0.0625 training.save_checkpoints=false experiment.name=imp_vgg_pos_cut15
+configs/imp_vgg_pos_base.yaml training.seed=1 training.max_epochs=80 fls.position=15 fls.output_multiplier=0.0625 training.save_checkpoints=false experiment.name=imp_vgg_pos_cut15
+configs/imp_vgg_pos_base.yaml training.seed=2 training.max_epochs=80 fls.position=15 fls.output_multiplier=0.0625 training.save_checkpoints=false experiment.name=imp_vgg_pos_cut15

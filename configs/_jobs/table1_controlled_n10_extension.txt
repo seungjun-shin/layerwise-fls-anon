@@ -1,0 +1,27 @@
+# Frozen Table 1 controlled extension: add seeds 10--14 to both exact ACT/LR pairs.
+# No cut, multiplier, allocation, optimizer, validation split, or budget search.
+
+configs/val_boundary_cut8_iso.yaml training.seed=10 training.max_epochs=80 training.save_checkpoints=true training.checkpoint_at_accs=[] experiment.name=paper_table1_resnet_controlled_act output.root=paper_reproduction/raw_metrics
+configs/val_lronly_cut8_iso.yaml training.seed=10 training.max_epochs=80 training.save_checkpoints=true training.checkpoint_at_accs=[] experiment.name=paper_table1_resnet_controlled_lr output.root=paper_reproduction/raw_metrics
+configs/val_vgg_bnd_cut15_iso.yaml training.seed=10 training.max_epochs=80 training.save_checkpoints=true training.checkpoint_at_accs=[] experiment.name=paper_table1_vgg_controlled_act output.root=paper_reproduction/raw_metrics
+configs/imp_vgg_pos_base.yaml training.seed=10 training.max_epochs=80 fls.position=15 fls.output_multiplier=1.0 fls.lr_compensation_multiplier=0.0625 data.val_fraction=0.1 data.val_seed=0 training.save_checkpoints=true training.checkpoint_at_accs=[] experiment.name=paper_table1_vgg_controlled_lr output.root=paper_reproduction/raw_metrics
+
+configs/val_boundary_cut8_iso.yaml training.seed=11 training.max_epochs=80 training.save_checkpoints=true training.checkpoint_at_accs=[] experiment.name=paper_table1_resnet_controlled_act output.root=paper_reproduction/raw_metrics
+configs/val_lronly_cut8_iso.yaml training.seed=11 training.max_epochs=80 training.save_checkpoints=true training.checkpoint_at_accs=[] experiment.name=paper_table1_resnet_controlled_lr output.root=paper_reproduction/raw_metrics
+configs/val_vgg_bnd_cut15_iso.yaml training.seed=11 training.max_epochs=80 training.save_checkpoints=true training.checkpoint_at_accs=[] experiment.name=paper_table1_vgg_controlled_act output.root=paper_reproduction/raw_metrics
+configs/imp_vgg_pos_base.yaml training.seed=11 training.max_epochs=80 fls.position=15 fls.output_multiplier=1.0 fls.lr_compensation_multiplier=0.0625 data.val_fraction=0.1 data.val_seed=0 training.save_checkpoints=true training.checkpoint_at_accs=[] experiment.name=paper_table1_vgg_controlled_lr output.root=paper_reproduction/raw_metrics
+
+configs/val_boundary_cut8_iso.yaml training.seed=12 training.max_epochs=80 training.save_checkpoints=true training.checkpoint_at_accs=[] experiment.name=paper_table1_resnet_controlled_act output.root=paper_reproduction/raw_metrics
+configs/val_lronly_cut8_iso.yaml training.seed=12 training.max_epochs=80 training.save_checkpoints=true training.checkpoint_at_accs=[] experiment.name=paper_table1_resnet_controlled_lr output.root=paper_reproduction/raw_metrics
+configs/val_vgg_bnd_cut15_iso.yaml training.seed=12 training.max_epochs=80 training.save_checkpoints=true training.checkpoint_at_accs=[] experiment.name=paper_table1_vgg_controlled_act output.root=paper_reproduction/raw_metrics
+configs/imp_vgg_pos_base.yaml training.seed=12 training.max_epochs=80 fls.position=15 fls.output_multiplier=1.0 fls.lr_compensation_multiplier=0.0625 data.val_fraction=0.1 data.val_seed=0 training.save_checkpoints=true training.checkpoint_at_accs=[] experiment.name=paper_table1_vgg_controlled_lr output.root=paper_reproduction/raw_metrics
+
+configs/val_boundary_cut8_iso.yaml training.seed=13 training.max_epochs=80 training.save_checkpoints=true training.checkpoint_at_accs=[] experiment.name=paper_table1_resnet_controlled_act output.root=paper_reproduction/raw_metrics
+configs/val_lronly_cut8_iso.yaml training.seed=13 training.max_epochs=80 training.save_checkpoints=true training.checkpoint_at_accs=[] experiment.name=paper_table1_resnet_controlled_lr output.root=paper_reproduction/raw_metrics
+configs/val_vgg_bnd_cut15_iso.yaml training.seed=13 training.max_epochs=80 training.save_checkpoints=true training.checkpoint_at_accs=[] experiment.name=paper_table1_vgg_controlled_act output.root=paper_reproduction/raw_metrics
+configs/imp_vgg_pos_base.yaml training.seed=13 training.max_epochs=80 fls.position=15 fls.output_multiplier=1.0 fls.lr_compensation_multiplier=0.0625 data.val_fraction=0.1 data.val_seed=0 training.save_checkpoints=true training.checkpoint_at_accs=[] experiment.name=paper_table1_vgg_controlled_lr output.root=paper_reproduction/raw_metrics
+
+configs/val_boundary_cut8_iso.yaml training.seed=14 training.max_epochs=80 training.save_checkpoints=true training.checkpoint_at_accs=[] experiment.name=paper_table1_resnet_controlled_act output.root=paper_reproduction/raw_metrics
+configs/val_lronly_cut8_iso.yaml training.seed=14 training.max_epochs=80 training.save_checkpoints=true training.checkpoint_at_accs=[] experiment.name=paper_table1_resnet_controlled_lr output.root=paper_reproduction/raw_metrics
+configs/val_vgg_bnd_cut15_iso.yaml training.seed=14 training.max_epochs=80 training.save_checkpoints=true training.checkpoint_at_accs=[] experiment.name=paper_table1_vgg_controlled_act output.root=paper_reproduction/raw_metrics
+configs/imp_vgg_pos_base.yaml training.seed=14 training.max_epochs=80 fls.position=15 fls.output_multiplier=1.0 fls.lr_compensation_multiplier=0.0625 data.val_fraction=0.1 data.val_seed=0 training.save_checkpoints=true training.checkpoint_at_accs=[] experiment.name=paper_table1_vgg_controlled_lr output.root=paper_reproduction/raw_metrics

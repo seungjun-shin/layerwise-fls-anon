@@ -1,0 +1,51 @@
+experiment:
+  name: experiment_34_vgg19_bn_late_lrcomp_transfer
+output:
+  root: outputs
+data:
+  name: cifar100
+  root: data
+  num_classes: 100
+  image_size: 32
+  batch_size: 128
+  num_workers: 2
+  augment: false
+  normalize: true
+  return_clean_labels: true
+label_noise:
+  rate: 0.0
+  seed: 0
+model:
+  name: vgg19_bn_cifar
+  in_channels: 3
+  num_classes: 100
+  width: 64
+  use_bn: true
+fls:
+  mode: blockwise
+  profile_name: null
+  groups:
+    early: {output_multiplier: 1.0, init_scale: 1.0}
+    middle: {output_multiplier: 1.0, init_scale: 1.0}
+    late: {output_multiplier: 1.0, init_scale: 1.0}
+    head: {output_multiplier: 1.0, init_scale: 1.0}
+training:
+  seed: 0
+  device: auto
+  max_epochs: 80
+  max_steps: null
+  optimizer: sgd
+  lr: 0.04096
+  blockwise_lr_compensation: upstream_cumulative
+  weight_decay: 0.0
+  momentum: 0.0
+diagnostics:
+  enabled: false
+  frequency_epochs: 10
+  groups: [early, middle, late, head]
+sweep:
+  seeds: [0, 1, 2]
+  learning_rates: [0.00256, 0.01024, 0.04096, 0.08192, 0.16384]
+  varied_groups: [late]
+  output_multipliers: [0.03125, 0.0625, 0.125, 0.25]
+  fixed_output_multiplier: 1.0

@@ -1,0 +1,17 @@
+# Wave-posN5: extend depth profile to n=5 (add seeds 3,4) for strict-trend + isotonic test (W1).
+configs/imp_pos_base.yaml training.seed=3 training.max_epochs=80 fls.position=8 fls.output_multiplier=1.0 experiment.name=imp_pos_baseline
+configs/imp_pos_base.yaml training.seed=3 training.max_epochs=80 fls.position=2 fls.output_multiplier=0.0625 experiment.name=imp_pos_cut2
+configs/imp_pos_base.yaml training.seed=3 training.max_epochs=80 fls.position=3 fls.output_multiplier=0.0625 experiment.name=imp_pos_cut3
+configs/imp_pos_base.yaml training.seed=3 training.max_epochs=80 fls.position=4 fls.output_multiplier=0.0625 experiment.name=imp_pos_cut4
+configs/imp_pos_base.yaml training.seed=3 training.max_epochs=80 fls.position=5 fls.output_multiplier=0.0625 experiment.name=imp_pos_cut5
+configs/imp_pos_base.yaml training.seed=3 training.max_epochs=80 fls.position=6 fls.output_multiplier=0.0625 experiment.name=imp_pos_cut6
+configs/imp_pos_base.yaml training.seed=3 training.max_epochs=80 fls.position=7 fls.output_multiplier=0.0625 experiment.name=imp_pos_cut7
+configs/imp_pos_base.yaml training.seed=3 training.max_epochs=80 fls.position=8 fls.output_multiplier=0.0625 experiment.name=imp_pos_cut8
+configs/imp_pos_base.yaml training.seed=4 training.max_epochs=80 fls.position=8 fls.output_multiplier=1.0 experiment.name=imp_pos_baseline
+configs/imp_pos_base.yaml training.seed=4 training.max_epochs=80 fls.position=2 fls.output_multiplier=0.0625 experiment.name=imp_pos_cut2
+configs/imp_pos_base.yaml training.seed=4 training.max_epochs=80 fls.position=3 fls.output_multiplier=0.0625 experiment.name=imp_pos_cut3
+configs/imp_pos_base.yaml training.seed=4 training.max_epochs=80 fls.position=4 fls.output_multiplier=0.0625 experiment.name=imp_pos_cut4
+configs/imp_pos_base.yaml training.seed=4 training.max_epochs=80 fls.position=5 fls.output_multiplier=0.0625 experiment.name=imp_pos_cut5
+configs/imp_pos_base.yaml training.seed=4 training.max_epochs=80 fls.position=6 fls.output_multiplier=0.0625 experiment.name=imp_pos_cut6
+configs/imp_pos_base.yaml training.seed=4 training.max_epochs=80 fls.position=7 fls.output_multiplier=0.0625 experiment.name=imp_pos_cut7
+configs/imp_pos_base.yaml training.seed=4 training.max_epochs=80 fls.position=8 fls.output_multiplier=0.0625 experiment.name=imp_pos_cut8

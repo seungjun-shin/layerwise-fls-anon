@@ -1,0 +1,12 @@
+# Validation-target iso-accuracy comparison: ResNet18-CIFAR, cut 8, five seeds.
+# checkpoint_atacc_* is triggered by held-out validation accuracy; test is report-only.
+configs/val_boundary_cut8_iso.yaml training.seed=0 training.max_epochs=80
+configs/val_boundary_cut8_iso.yaml training.seed=1 training.max_epochs=80
+configs/val_boundary_cut8_iso.yaml training.seed=2 training.max_epochs=80
+configs/val_boundary_cut8_iso.yaml training.seed=3 training.max_epochs=80
+configs/val_boundary_cut8_iso.yaml training.seed=4 training.max_epochs=80
+configs/val_lronly_cut8_iso.yaml training.seed=0 training.max_epochs=80
+configs/val_lronly_cut8_iso.yaml training.seed=1 training.max_epochs=80
+configs/val_lronly_cut8_iso.yaml training.seed=2 training.max_epochs=80
+configs/val_lronly_cut8_iso.yaml training.seed=3 training.max_epochs=80
+configs/val_lronly_cut8_iso.yaml training.seed=4 training.max_epochs=80

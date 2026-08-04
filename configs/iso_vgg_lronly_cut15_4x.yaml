@@ -1,0 +1,44 @@
+experiment:
+  name: iso_vgg_lronly_cut15_4x
+output:
+  root: outputs
+data:
+  name: cifar100
+  root: data
+  num_classes: 100
+  image_size: 32
+  batch_size: 128
+  num_workers: 2
+  augment: false
+  normalize: true
+  return_clean_labels: true
+label_noise:
+  rate: 0.0
+  seed: 0
+model:
+  name: vgg19_bn_cifar
+  in_channels: 3
+  num_classes: 100
+  width: 64
+  use_bn: true
+fls:
+  mode: position
+  position: 15
+  output_multiplier: 1.0
+  lr_compensation_multiplier: 0.25
+training:
+  seed: 0
+  device: auto
+  max_epochs: 80
+  max_steps: null
+  optimizer: sgd
+  lr: 0.04096
+  position_lr_compensation: true
+  weight_decay: 0.0
+  momentum: 0.0
+  save_checkpoints: true
+  checkpoint_at_accs: [54.0, 56.0, 58.0]
+diagnostics:
+  enabled: false
+  frequency_epochs: 10
+  regions: [early, middle, late, head]

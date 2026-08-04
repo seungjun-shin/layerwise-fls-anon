@@ -1,0 +1,45 @@
+experiment:
+  name: experiment_30_nobn_global_boundary_refinement
+output:
+  root: outputs
+data:
+  name: cifar100
+  root: data
+  num_classes: 100
+  image_size: 32
+  batch_size: 128
+  num_workers: 2
+  augment: false
+  normalize: true
+  return_clean_labels: true
+label_noise:
+  rate: 0.0
+  seed: 0
+model:
+  name: resnet18_cifar
+  in_channels: 3
+  num_classes: 100
+  width: 64
+  use_bn: false
+fls:
+  mode: global
+  global:
+    output_multiplier: 1.0
+    lr_compensation: true
+training:
+  seed: 0
+  device: auto
+  max_epochs: 80
+  max_steps: null
+  optimizer: sgd
+  lr: 0.16384
+  weight_decay: 0.0
+  momentum: 0.0
+diagnostics:
+  enabled: false
+  frequency_epochs: 10
+  groups: [early, middle, late, head]
+sweep:
+  seeds: [0, 1]
+  learning_rates: [0.16384, 0.32768, 0.65536]
+  global_output_multipliers: [0.5, 1.0, 2.0, 4.0]

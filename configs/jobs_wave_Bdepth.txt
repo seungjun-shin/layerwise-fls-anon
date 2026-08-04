@@ -1,0 +1,7 @@
+# B' depth-ordering @320, cuts 2 & 5 (cut 8 reused from B_late_ep320), seeds 0-2.
+configs/imp_pos_base.yaml training.seed=0 training.max_epochs=320 training.lr_scheduler=none fls.position=2 fls.output_multiplier=0.0625 experiment.name=B_pos_cut2_ep320
+configs/imp_pos_base.yaml training.seed=1 training.max_epochs=320 training.lr_scheduler=none fls.position=2 fls.output_multiplier=0.0625 experiment.name=B_pos_cut2_ep320
+configs/imp_pos_base.yaml training.seed=2 training.max_epochs=320 training.lr_scheduler=none fls.position=2 fls.output_multiplier=0.0625 experiment.name=B_pos_cut2_ep320
+configs/imp_pos_base.yaml training.seed=0 training.max_epochs=320 training.lr_scheduler=none fls.position=5 fls.output_multiplier=0.0625 experiment.name=B_pos_cut5_ep320
+configs/imp_pos_base.yaml training.seed=1 training.max_epochs=320 training.lr_scheduler=none fls.position=5 fls.output_multiplier=0.0625 experiment.name=B_pos_cut5_ep320
+configs/imp_pos_base.yaml training.seed=2 training.max_epochs=320 training.lr_scheduler=none fls.position=5 fls.output_multiplier=0.0625 experiment.name=B_pos_cut5_ep320

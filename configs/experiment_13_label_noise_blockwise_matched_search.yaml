@@ -1,0 +1,57 @@
+experiment:
+  name: experiment_13_label_noise_blockwise_matched_search
+output:
+  root: outputs
+data:
+  name: cifar100
+  root: data
+  num_classes: 100
+  image_size: 32
+  batch_size: 128
+  num_workers: 2
+  augment: false
+  normalize: true
+  return_clean_labels: true
+label_noise:
+  rate: 0.2
+  seed: 0
+model:
+  name: resnet18_cifar
+  in_channels: 3
+  num_classes: 100
+  width: 64
+  use_bn: true
+fls:
+  mode: blockwise
+  profile_name: null
+  groups:
+    early: {output_multiplier: 1.0, init_scale: 1.0}
+    middle: {output_multiplier: 1.0, init_scale: 1.0}
+    late: {output_multiplier: 1.0, init_scale: 1.0}
+    head: {output_multiplier: 1.0, init_scale: 1.0}
+training:
+  seed: 0
+  device: auto
+  max_epochs: 80
+  max_steps: null
+  optimizer: sgd
+  lr: 0.04096
+  weight_decay: 0.0
+  momentum: 0.0
+diagnostics:
+  enabled: true
+  frequency_epochs: 10
+  groups: [early, middle, late, head]
+  clean_noisy_alignment: true
+sweep:
+  seeds: [0]
+  learning_rates: [0.04096, 0.08192, 0.16384]
+  label_noise_rates: [0.2, 0.4]
+  anchor_values: [0.25, 0.5]
+  anchor_profiles:
+    - {name: uniform_anchor, ratios: [1.0, 1.0, 1.0, 1.0]}
+    - {name: mild_progressive, ratios: [2.0, 1.0, 0.5, 1.0]}
+    - {name: medium_progressive, ratios: [4.0, 1.0, 0.25, 1.0]}
+    - {name: reverse_progressive, ratios: [0.5, 1.0, 2.0, 1.0]}
+    - {name: mild_same_average, ratios: [1.125, 1.125, 1.125, 1.125]}
+    - {name: mild_shuffled_control, ratios: [1.0, 0.5, 2.0, 1.0]}

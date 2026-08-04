@@ -1,0 +1,53 @@
+experiment:
+  name: paper_vgg_practical_t_lr_final
+output:
+  root: paper_reproduction/raw_metrics
+data:
+  name: cifar100
+  root: data
+  num_classes: 100
+  image_size: 32
+  batch_size: 128
+  num_workers: 2
+  augment: true
+  normalize: true
+  return_clean_labels: true
+  val_fraction: 0.1
+  val_seed: 0
+  deterministic_validation: true
+label_noise:
+  rate: 0.0
+  seed: 0
+model:
+  name: vgg19_bn_cifar
+  in_channels: 3
+  num_classes: 100
+  width: 64
+  use_bn: true
+fls:
+  mode: location
+  boundaries:
+    after_early: {output_multiplier: 1.0, init_scale: 1.0}
+    after_middle: {output_multiplier: 1.0, init_scale: 1.0}
+    after_late: {output_multiplier: 1.0, init_scale: 1.0}
+training:
+  seed: 10
+  device: auto
+  max_epochs: 80
+  max_steps: null
+  optimizer: sgd
+  lr: 0.04096
+  lr_scheduler: cosine
+  location_lr_compensation: upstream
+  location_lr_compensation_multipliers:
+    after_early: 1.0
+    after_middle: 1.0
+    after_late: 0.0625
+  weight_decay: 0.0005
+  momentum: 0.9
+  save_checkpoints: true
+  evaluate_test_each_epoch: false
+  protocol_sanity:
+    enabled: true
+diagnostics:
+  enabled: false

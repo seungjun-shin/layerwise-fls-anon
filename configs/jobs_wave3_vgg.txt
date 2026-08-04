@@ -1,0 +1,12 @@
+# Wave 3 -- generality: VGG19-BN matched pair at n=5 (upgrade paper's n=3).
+# Controlled protocol, base LR 0.04096, checkpoints saved.
+configs/imp_vgg_global.yaml training.seed=0 training.max_epochs=80 experiment.name=imp_vgg_global
+configs/imp_vgg_global.yaml training.seed=1 training.max_epochs=80 experiment.name=imp_vgg_global
+configs/imp_vgg_global.yaml training.seed=2 training.max_epochs=80 experiment.name=imp_vgg_global
+configs/imp_vgg_global.yaml training.seed=3 training.max_epochs=80 experiment.name=imp_vgg_global
+configs/imp_vgg_global.yaml training.seed=4 training.max_epochs=80 experiment.name=imp_vgg_global
+configs/imp_vgg_late.yaml training.seed=0 training.max_epochs=80 experiment.name=imp_vgg_late
+configs/imp_vgg_late.yaml training.seed=1 training.max_epochs=80 experiment.name=imp_vgg_late
+configs/imp_vgg_late.yaml training.seed=2 training.max_epochs=80 experiment.name=imp_vgg_late
+configs/imp_vgg_late.yaml training.seed=3 training.max_epochs=80 experiment.name=imp_vgg_late
+configs/imp_vgg_late.yaml training.seed=4 training.max_epochs=80 experiment.name=imp_vgg_late

@@ -1,0 +1,9 @@
+# Validation-target iso-accuracy comparison: VGG19-BN, cut 15, three seeds.
+# The paired comparator is the 2x LR-only arm; checkpoint_atacc_* is triggered
+# by held-out validation accuracy and includes the manuscript's 58% target.
+configs/val_vgg_bnd_cut15_iso.yaml training.seed=0 training.max_epochs=80
+configs/val_vgg_bnd_cut15_iso.yaml training.seed=1 training.max_epochs=80
+configs/val_vgg_bnd_cut15_iso.yaml training.seed=2 training.max_epochs=80
+configs/val_vgg_lr_cut15_2x_iso.yaml training.seed=0 training.max_epochs=80
+configs/val_vgg_lr_cut15_2x_iso.yaml training.seed=1 training.max_epochs=80
+configs/val_vgg_lr_cut15_2x_iso.yaml training.seed=2 training.max_epochs=80

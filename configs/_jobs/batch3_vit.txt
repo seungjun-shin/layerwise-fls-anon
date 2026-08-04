@@ -1,0 +1,10 @@
+# ===== Tier B: ViT-CIFAR generality (controlled protocol, CIFAR-100) =====
+configs/experiment_49_global_matched_seed_expansion.yaml training.seed=0 training.max_epochs=80 model.name=vit_cifar model.width=192 fls.global.output_multiplier=0.25 experiment.name=experiment_95_vit_global_c0p25
+configs/experiment_49_global_matched_seed_expansion.yaml training.seed=1 training.max_epochs=80 model.name=vit_cifar model.width=192 fls.global.output_multiplier=0.25 experiment.name=experiment_95_vit_global_c0p25
+configs/experiment_49_global_matched_seed_expansion.yaml training.seed=2 training.max_epochs=80 model.name=vit_cifar model.width=192 fls.global.output_multiplier=0.25 experiment.name=experiment_95_vit_global_c0p25
+configs/experiment_49_global_matched_seed_expansion.yaml training.seed=0 training.max_epochs=80 model.name=vit_cifar model.width=192 fls.global.output_multiplier=0.0625 experiment.name=experiment_95_vit_global_c0p0625
+configs/experiment_49_global_matched_seed_expansion.yaml training.seed=1 training.max_epochs=80 model.name=vit_cifar model.width=192 fls.global.output_multiplier=0.0625 experiment.name=experiment_95_vit_global_c0p0625
+configs/experiment_49_global_matched_seed_expansion.yaml training.seed=2 training.max_epochs=80 model.name=vit_cifar model.width=192 fls.global.output_multiplier=0.0625 experiment.name=experiment_95_vit_global_c0p0625
+configs/experiment_40_boundary_late_seed_expansion.yaml training.seed=0 training.max_epochs=80 model.name=vit_cifar model.width=192 experiment.name=experiment_95_vit_late_c0p0625
+configs/experiment_40_boundary_late_seed_expansion.yaml training.seed=1 training.max_epochs=80 model.name=vit_cifar model.width=192 experiment.name=experiment_95_vit_late_c0p0625
+configs/experiment_40_boundary_late_seed_expansion.yaml training.seed=2 training.max_epochs=80 model.name=vit_cifar model.width=192 experiment.name=experiment_95_vit_late_c0p0625

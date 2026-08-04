@@ -1,0 +1,44 @@
+experiment:
+  name: experiment_04_progressive_profile_fullgrid
+output:
+  root: outputs
+data:
+  name: cifar100
+  root: data
+  num_classes: 100
+  image_size: 32
+  batch_size: 128
+  num_workers: 2
+  augment: false
+  normalize: true
+  return_clean_labels: true
+label_noise: {rate: 0.0, seed: 0}
+model:
+  name: resnet18_cifar
+  in_channels: 3
+  num_classes: 100
+  width: 64
+  use_bn: true
+fls:
+  mode: blockwise
+  profile_name: progressive_increasing
+  base_values:
+    weak: 4.0
+    optimal: 1.0
+    strong: 0.015625
+training:
+  seed: 0
+  device: auto
+  max_epochs: 80
+  max_steps: null
+  optimizer: sgd
+  lr: 0.00064
+  weight_decay: 0.0
+  momentum: 0.0
+diagnostics:
+  enabled: false
+  frequency_epochs: 5
+  groups: [early, middle, late, head]
+sweep:
+  seeds: [0, 1, 2]
+  profiles: [uniform_weak, uniform_optimal, uniform_strong, uniform_same_average, progressive_increasing, progressive_decreasing, random, shuffled_progressive]
