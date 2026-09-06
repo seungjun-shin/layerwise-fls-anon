@@ -1,7 +1,7 @@
-# Beyond Global Feature Learning Strength
+# Disentangling Activation Scaling From Layer-Wise Learning-Rate Reweighting at the Final Representation Boundary
 
-Code for the paper "Beyond Global Feature Learning Strength: Boundary Scaling Reveals
-Depth-Dependent Representation Dynamics". Anonymized for double-blind review.
+Code for the paper "Disentangling Activation Scaling From Layer-Wise Learning-Rate
+Reweighting at the Final Representation Boundary".
 
 The library implements depth-resolved feature-learning-strength (FLS) interventions:
 a global output multiplier with learning-rate compensation, representation-boundary
